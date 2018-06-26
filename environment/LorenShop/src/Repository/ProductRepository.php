@@ -6,6 +6,20 @@ use LorenShop\Helper\SingletonDbConnector;
 
 class ProductRepository
 {
+
+    public function findProduct(): array {
+        $db = SingletonDbConnector::connect();
+
+        $result = $db->query("SELECT Products.id_product, Products.name, Products.image, Products.brand, Products.price, 
+Products.color, Products.description, Products.id_category, ProductDetails.size, Categories.id_sex_category
+FROM Products 
+INNER JOIN Categories ON Categories.id_category = Products.id_category 
+INNER JOIN ProductDetails ON Products.id_product=ProductDetails.id_product")->fetchAll();
+
+        return $result;
+    }
+
+
     public function findManProducts(): array {
         $db = SingletonDbConnector::connect();
 

@@ -1,13 +1,13 @@
 app.service('cartService', function ($http) {
 	var that = this;
-    this.current_quantity = 1;
-    this.decreaseProduct = function () {
-        if (this.current_quantity > 1) {
-            this.current_quantity--;
+    that.current_quantity = 1;
+    that.decreaseProduct = function () {
+        if (that.current_quantity > 1) {
+            that.current_quantity--;
         }
     }
-    this.increaseProduct = function () {
-        this.current_quantity++;
+    that.increaseProduct = function () {
+        that.current_quantity++;
     }
 
 

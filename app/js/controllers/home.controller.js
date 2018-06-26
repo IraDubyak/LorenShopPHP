@@ -1,4 +1,5 @@
-app.controller('homeCtrl', function ($scope, loginService) {
+app.controller('homeCtrl', function ($scope, $window, loginService) {
+    $window.scrollTo(0, angular.element(document.getElementsByTagName('body')).offsetTop);
 
     $scope.login_user = loginService.getName();
     console.log($scope.login_user);
