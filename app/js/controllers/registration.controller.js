@@ -1,4 +1,5 @@
-app.controller('registrationCtrl', function ($scope, $http) {
+app.controller('registrationCtrl', function ($scope, $http, $window) {
+    $window.scrollTo(0, angular.element(document.getElementsByTagName('body')).offsetTop);
     $scope.reg = function () {
 
         if($scope.name == undefined || $scope.lastname == undefined || $scope.email == undefined || $scope.password == undefined){

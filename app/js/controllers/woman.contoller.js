@@ -1,4 +1,9 @@
-app.controller('womanCtrl', function ($scope, $http) {
+app.controller('womanCtrl', function ($scope, $http, $window) {
+
+    $window.scrollTo(0, angular.element(document.getElementsByTagName('body')).offsetTop);
+
+    console.log($scope.categories.category1());
+
     $http.get(nodeVariable + 'woman_products')
 
     .then(function(response) {
@@ -36,6 +41,8 @@ app.controller('womanCtrl', function ($scope, $http) {
 
 
     });
+
+
 
     $scope.color = function (x) {
         $scope.myColor = x;

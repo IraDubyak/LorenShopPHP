@@ -14,6 +14,5 @@ app.constant('USER_ROLES', {
   guest: 'guest'
 })
 
-// const phpVariable = 'http://192.168.33.10/index.php/';
-// const nodeVariable = 'http://localhost:3333/';
+
 const nodeVariable = 'http://192.168.33.10/index.php/';
