@@ -8,7 +8,10 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <header id="header">
+    <div class="up_button"> 
+         <i class="fa fa-angle-up" aria-hidden="true"></i>
+      </div>
+    <header id="header" class="nav">
         <div class="nav-menu">
             <ul class="header_links_left">
                 <li><a class="logo" href="#/">Loren</a></li>
@@ -27,9 +30,9 @@
                 </li>
                 <li arrow-transform class="sub_menu_parent menu_item">
                     <a href="#!/man" class="arrow pink">
-                    <span>Man</span>
-                    <i class="fa fa-angle-down angle"></i>
-                </a>
+                        <span>Man</span>
+                        <i class="fa fa-angle-down angle"></i>
+                    </a>
                     <ul class="sub_menu">
                         <div ng-repeat="item in sex_category_man" data-id="{{item.id_category}}" class="header_id_category">
                             <li><a href="#!/man">{{item.name}}</a></li>
@@ -39,19 +42,23 @@
                 </li>
                 <li class="menu_item"><a class="pink" href="#!/contact_us">Contact us</a></li>
             </ul>
-        <ul class="header_links_right">
-            <li class="menu_item"><a class="pink" href="#!/login">{{login_user}}</a></li>
-            <li class="menu_item">
-                <a class="pink" href="#!/cart">Cart</a>
-                <span id="amount">0</span>
-            </li>
-            <li class="menu_item">
-                <a ng-click="startSearch()" id="search_button" class="pink" href="#"><i class="fa fa-search" style="font-size:24px"></i></a>
+            <ul class="header_links_right">
+                <li class="menu_item"><a class="pink" href="#!/login">{{login_user}}</a></li>
+                <li class="menu_item">
+                    <a class="pink" href="#!/cart">Cart</a>
+                </li>
+                <li class="menu_item">
+                    <a ng-click="startSearch()" id="search_button" class="pink"><i class="fa fa-search" style="font-size:24px"></i></a>
 
-            </li>
-        </ul>
-    </div>
-</header>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="burger" onclick="makeResponsiveHeader()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
 <div ng-show="showSearchLine" id="search_block">
     <div class="search_input">
         <span clear-search-products id="search_products_button"><i class="fa fa-search" style="font-size:24px"></i></span>
