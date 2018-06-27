@@ -1,20 +1,23 @@
 app.controller('mainCtrl', function ($scope, $http, loginService, $window) {
     $window.scrollTo(0, angular.element(document.getElementsByTagName('body')).offsetTop);
 
-$scope.login_user = loginService.getName();
+    $scope.login_user = loginService.getName();
     console.log($scope.login_user);
 
 
 
-    $scope.categories = {
-        category1: function () {
-            $http.get(nodeVariable + 'product_categories/1')
-                .then(function(response) {
-                    $scope.category1 = response.data;
-                });
-            return $scope.category1;
-        }
-    }
+    $http.get(nodeVariable + 'product_categories/1').then(function(response) {
+        $scope.category1 = response.data;
+    });
+    $http.get(nodeVariable + 'product_categories/2').then(function(response) {
+        $scope.category2 = response.data;
+    });
+    $http.get(nodeVariable + 'product_categories/3').then(function(response) {
+        $scope.category3 = response.data;
+    });
+    $http.get(nodeVariable + 'product_categories/4').then(function(response) {
+        $scope.category4 = response.data;
+    });
 
 
     $http.get(nodeVariable + 'product').then(function(response) {
