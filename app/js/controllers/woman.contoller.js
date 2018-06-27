@@ -1,6 +1,13 @@
-app.controller('womanCtrl', function ($scope, $http) {
-    $http.get(nodeVariable + 'woman_products')
+app.controller('womanCtrl', function ($scope, $http, $window) {
+    $window.scrollTo(0, angular.element(document.getElementsByTagName('body')).offsetTop);
 
+
+    console.log($scope.category1);
+
+
+
+
+    $http.get(nodeVariable + 'woman_products')
     .then(function(response) {
         $scope.product_woman = response.data;
 
@@ -36,6 +43,8 @@ app.controller('womanCtrl', function ($scope, $http) {
 
 
     });
+
+
 
     $scope.color = function (x) {
         $scope.myColor = x;

@@ -1,4 +1,5 @@
-app.controller('loginCtrl', function ($scope, $http, loginService) {
+app.controller('loginCtrl', function ($scope, $http, loginService, $window) {
+    $window.scrollTo(0, angular.element(document.getElementsByTagName('body')).offsetTop);
 
   $scope.users_list = function () {
         $http.get('http://192.168.33.10/index.php/registered_users')

@@ -23,6 +23,19 @@ class ProductMapper
     /**
      * @return array
      */
+    public function findProduct(): array
+    {
+        $result = $this->productRepository->findProduct();
+
+        $products = [];
+
+        foreach ($result as $productAssoc) {
+            $products[] = $this->mapRowToArcitle($productAssoc);
+        }
+
+        return $products;
+    }
+
     public function findManProductsSizeXS(): array
     {
         $result = $this->productRepository->findManProductsSizeXS();

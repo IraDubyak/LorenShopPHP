@@ -30,6 +30,16 @@ class ProductController {
 
         return $product;
     }
+    public function productList() {
+
+        $productMapper = new ProductMapper(
+            new ProductRepository()
+        );
+
+        $product = $productMapper->findProduct();
+
+        return $product;
+    }
 
     public function productManSizeS() {
 
